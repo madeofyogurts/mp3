@@ -1,0 +1,6 @@
+#proba_tworzenia_okna
+import wx
+mp3 = wx.App()
+frm = wx.Frame(None, title="Strona początkowa")
+frm.Show()
+mp3.MainLoop()
