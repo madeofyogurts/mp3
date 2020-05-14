@@ -2,3 +2,6 @@ Jak odtwarzać dźwięk w Pythonie?
 https://pythonbasics.org/python-play-sound/
 https://stackoverflow.com/questions/307305/play-a-sound-with-python
 https://www.bitforestinfo.com/2018/01/how-to-play-music-with-python.html
+
+PyGame
+https://nerdparadise.com/programming/pygame/part3
