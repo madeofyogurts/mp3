@@ -1,0 +1,2 @@
+Jak odtwarzać dźwięk w Pythonie?
+https://pythonbasics.org/python-play-sound/
