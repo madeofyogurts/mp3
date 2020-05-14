@@ -1,6 +1,23 @@
 #proba_tworzenia_okna
 import wx
 mp3 = wx.App()
-frm = wx.Frame(None, title="Strona początkowa")
+frm = wx.Frame(None, title="Okno początkowe")
 frm.Show()
 mp3.MainLoop()
+
+
+#inny sposob
+
+import wx
+class FirstFrame(wx.Frame):
+    def __init__(self,parent, title):
+         super(FirstFrame,self).__init__(parent, title=title)
+
+class MyApp(wx.App):
+    def OnInit(self):
+        self.frame = FirstFrame(parent=None, title= "Pierwsze okienko")
+        self.frame.Show()
+        return True
+
+app = MyApp()
+app.MainLoop()
