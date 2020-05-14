@@ -1,2 +1,2 @@
 # Odtwarzacz mp3
-Projekt, który musimy wykonać na zajęcia programowania
+Projekt, który musimy (i bardzo chcemy!) wykonać na zajęcia programowania
