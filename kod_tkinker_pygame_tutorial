@@ -1,0 +1,20 @@
+from tkinter import *
+from pygame import mixer
+root= Tk()
+
+mixer.init() #inicjonowanie mixera
+root.geometry("800x300") #format okna
+root.title("MP3 Player") #tytuł
+root.iconbitmap("/Users/juliaslowicka/Documents/odtwarzacz/circular.png") #tutaj można dowolną ikonę miniaturkę wrzucuć (na macach nie chce działać)
+
+text = Label(root, text= "let's make some noise!") #tworzenie tekstu
+text.pack() #unpacking- żeby się wyświetlał trzeba rozpakować tekst
+play_photo=PhotoImage(file="/Users/juliaslowicka/Documents/odtwarzacz/circular.png") #tworzenie ikony/widżetu- tu można dać dowolny
+
+def playing(): #funkcja odtwarzania utworów
+    mixer.music.load("/Users/juliaslowicka/Documents/odtwarzacz/this_fear.wav")#można dać dowolny utwór, ale nie w formacie mp3 tylko wav
+    mixer.music.play()
+
+playbutton= Button(root,image=play_photo, command= playing) #tworzenie przycisku
+playbutton.pack() #odpakowywanie przycisku
+root.mainloop() #zawsze na końcu (żeby działało nieprzerwanie w nieskończonej pętli)
