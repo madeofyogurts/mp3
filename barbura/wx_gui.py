@@ -20,12 +20,12 @@ def bitmap_button_creation(path, width, height, parent, position_x, position_y, 
 def label_creation(parent, user_text, fontsize, position_x, position_y, color, weight=False):
     label_created = wx.StaticText(parent, style=wx.ALIGN_CENTER, pos=(position_x, position_y))
     label_text = str(user_text)
-    if weight == "bold":
+    if not weight:
+        label_weight = wx.NORMAL
+    elif weight == "bold":
         label_weight = wx.BOLD
     elif weight == "light":
         label_weight = wx.LIGHT
-    if not weight:
-        label_weight = wx.NORMAL
     font = wx.Font(int(fontsize), wx.SWISS, wx.NORMAL, label_weight)
     label_created.SetForegroundColour(color)
     label_created.SetFont(font)
