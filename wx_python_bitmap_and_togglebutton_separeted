@@ -36,34 +36,37 @@ class MyFrame(wx.Frame):
         super().__init__(parent=None, title='MP3 Player', size=(800, 300))
         panel= MyPanel(self)
         self.SetBackgroundColour('#ffffff')
+        pygame.mixer.init()
+        self.Show()
+
+class MyPanel(wx.Panel):
+
+    def __init__(self, parent):
+        """Constructor"""
+        #super(self,parent).__init__()
+
+        wx.Panel.__init__(self, parent)
 
 
-        # LEFT SIDE WITH LABELS
+        playing_from_label = label_creation(self, 'NOW PLAYING FROM', 13, 99, 54, '#707070')
+        user_whereabouts_label = label_creation(self, 'Twoja Stara in Desktop', 17, 99, 79, '#FF2D55')
 
-        playing_from_label = label_creation(panel, 'NOW PLAYING FROM', 13, 99, 54, '#707070')
-        user_whereabouts_label = label_creation(panel, 'Twoja Stara in Desktop', 17, 99, 79, '#FF2D55')
+        song_title_label = label_creation(self, 'Song Title', 22, 99, 123, '#000000', 'bold')
+        artist_label = label_creation(self, 'Artist Name', 17, 99, 157, '#707070')
 
-        song_title_label = label_creation(panel, 'Song Title', 22, 99, 123, '#000000', 'bold')
-        artist_label = label_creation(panel, 'Artist Name', 17, 99, 157, '#707070')
-
-        time_from_beginning_label = label_creation(panel, '06:15', 11, 99, 217, '#FF2D55')
-        song_length_label = label_creation(panel, '21:37', 11, 391, 217, '#FF2D55')
+        time_from_beginning_label = label_creation(self, '06:15', 11, 99, 217, '#FF2D55')
+        song_length_label = label_creation(self, '21:37', 11, 391, 217, '#FF2D55')
         # --------------------------------------
 
         # RIGHT SIDE WITH BUTTONS
 
-        change_folder_button = wx.Button(panel, label='CHANGE FOLDER', pos=(510, 54), size=(183, 36))
+        change_folder_button = wx.Button(self, label='CHANGE FOLDER', pos=(510, 54), size=(183, 36))
 
-        test_button = bitmap_button_creation('icon_backward.png', 40, 40, panel, 510, 130)
-        play_button = bitmap_button_creation('icon_play.png', 80, 80, panel, 560, 110, toggle=True)
-        self.Bind(wx.EVT_BUTTON, self.humble_work_of_the_button)
-        # "self" powoduje, że forward i backward grają muzykę
-        # Zmieniając "self" na "play_button" nie działa żaden przycisk
-        # Po ustawieniu "test_button" muzyka zaczęła grać tylko w w jednym, w backward
-        # po usunięciu toggle=True z play_button muzyka zaczęła grać!
-        forward_button = bitmap_button_creation('icon_forward.png', 40, 40, panel, 650, 130)
-        # --------------------------------------
+        self.test_button = bitmap_button_creation('icon_backward.png', 40, 40, self, 510, 130)
+        self.play_button = bitmap_button_creation('icon_play.png', 80, 80, self, 560, 110, toggle=True)
+        self.Bind(wx.EVT_TOGGLEBUTTON, self.onToggle)
 
+        forward_button = bitmap_button_creation('icon_forward.png', 40, 40, self, 650, 130)
         self.Show()
     def humble_work_of_the_button(self, e):
         print('"She Wants" by Metronomy is playing.')
@@ -71,35 +74,29 @@ class MyFrame(wx.Frame):
         pygame.mixer.music.load("this_fear.wav")
         pygame.mixer.music.play()
 
-class MyPanel(wx.Panel):
-    def __init__(self,parent):
-        super(MyPanel, self).__init__(parent)
-
-
-    def __init__(self, parent):
-        """Constructor"""
-        wx.Panel.__init__(self, parent)
-
-        self.save_ico = wx.ArtProvider.GetBitmap(wx.ART_FILE_SAVE, wx.ART_FRAME_ICON , (16,16))
-        #do kodu powyżej trzeba wrzucić obrazek i parametry odnośnie lokalizacji i
-        self.print_ico = wx.ArtProvider.GetBitmap(wx.ART_PRINT, wx.ART_FRAME_ICON, (16,16))
-        #tutaj leci ikonka stop
-        self.toggleBtn = wx.ToggleButton(self)
-        self.toggleBtn.SetBitmap(self.save_ico)
-        self.toggleBtn.Bind(wx.EVT_TOGGLEBUTTON, self.onToggle)
 
     def onToggle(self, event):
         """"""
         btn = event.GetEventObject()
-        if btn.GetValue():
-            self.toggleBtn.SetBitmap(self.print_ico)
-            pygame.mixer.init()
-            pygame.mixer.music.load("this_fear.wav")
-            pygame.mixer.music.play()
 
+        if pygame.mixer.music.get_busy():
+            if btn.GetValue():
+                #self.toggleBtn.SetBitmap(self.print_ico)
+
+                #pygame.mixer.music.load("this_fear.wav")
+                pygame.mixer.music.unpause()
+
+            else:
+                pygame.mixer.music.pause()
         else:
-            self.toggleBtn.SetBitmap(self.save_ico)
-            pygame.mixer.music.stop()
+            if btn.GetValue():
+                #self.toggleBtn.SetBitmap(self.print_ico)
+
+                pygame.mixer.music.load("this_fear.wav")
+                pygame.mixer.music.play()
+
+            else:
+                pygame.mixer.music.pause()
 
 
 
@@ -113,4 +110,3 @@ class MyApp(wx.App):
 app = wx.App()
 frame = MyFrame()
 app.MainLoop()
-
