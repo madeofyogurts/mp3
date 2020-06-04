@@ -73,8 +73,17 @@ class MyPanel(wx.Panel):
         dark_mode_button.Bind(wx.EVT_TOGGLEBUTTON, self.change_background_color)
         slider = wx.Slider(self, 5, 6, 1, 100, (149, 217), (200, -1))
         slider.Bind(wx.EVT_ENTER_WINDOW, self.slider_work, id=5)
+        volume = wx.Slider(self, 6, 5, 0, 10, (149, 17), (100, -1))
+        volume.Bind(wx.EVT_SCROLL, self.volumeSlider, id=6)
 
         self.Show()
+        
+    def volumeSlider(self, e):
+        slider = e.GetEventObject() 
+        vol = slider.GetValue()
+        vol = float(vol) / slider.GetMax() 
+        print(vol)
+        pygame.mixer.music.set_volume(vol)
 
     # ICONS=["play.png", "stop.png"]
     # X=[1,0]
