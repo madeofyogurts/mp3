@@ -1,6 +1,5 @@
 import wx
 import pygame
-import wx.media
 
 pygame.mixer.init()
 def bitmap_button_creation(path, width, height, parent, position_x, position_y, toggle=False):
