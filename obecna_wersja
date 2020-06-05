@@ -71,8 +71,6 @@ class MyPanel(wx.Panel):
         dark_mode_button= bitmap_button_creation('icon_play.png',20,20,self,50,50, toggle=True)
         #tutaj wrzućcie ikonkę zamiast stop.png
         dark_mode_button.Bind(wx.EVT_TOGGLEBUTTON, self.change_background_color)
-        slider = wx.Slider(self, 5, 6, 1, 100, (149, 217), (200, -1))
-        slider.Bind(wx.EVT_ENTER_WINDOW, self.slider_work, id=5)
         volume = wx.Slider(self, 6, 5, 0, 10, (149, 17), (100, -1))
         volume.Bind(wx.EVT_SCROLL, self.volumeSlider, id=6)
 
@@ -82,7 +80,6 @@ class MyPanel(wx.Panel):
         slider = e.GetEventObject() 
         vol = slider.GetValue()
         vol = float(vol) / slider.GetMax() 
-        print(vol)
         pygame.mixer.music.set_volume(vol)
 
     # ICONS=["play.png", "stop.png"]
