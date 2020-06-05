@@ -43,7 +43,7 @@ class MyFrame(wx.Frame):
 
         self.playing_from_label = label_creation(panel, 'NOW PLAYING FROM', 13, 99, 54, '#707070')
 
-        self.label = self.folder.split('/')[-2]
+        self.label = self.folder.split('/')[-1]
         self.user_whereabouts_label = label_creation(panel, self.label, 17, 99, 79, '#FF2D55')
 
         self.song_title_label = label_creation(panel, 'Song Title', 22, 99, 123, '#000000', 'bold')
@@ -76,7 +76,7 @@ class MyFrame(wx.Frame):
         self.about_info = bitmap_button_creation('info_icon.png', 20, 20, panel, 50, 80)
         self.about_info.Bind(wx.EVT_BUTTON, self.about_button_clicked)
 
-        max_volume_button = bitmap_button_creation("info_icon.png", 20, 20, panel, 650, 200)
+        max_volume_button = bitmap_button_creation("icon_max.png", 20, 20, panel, 650, 200)
         max_volume_button.Bind(wx.EVT_BUTTON, self.maximum_volume)
         max_volume_button.Bind(wx.EVT_BUTTON, self.change_slider_max)
 
