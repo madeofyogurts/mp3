@@ -12,6 +12,9 @@ pip install pygame
 ```bash
 pip install wxpython
 ```
+```bash 
+pip install mutagen
+```
 
 ## Usage
 
