@@ -17,13 +17,25 @@ pip install mutagen
 ```
 
 ## Usage
-
 Download or clone this repo, add your .mp3 files to the same catalog and then run main.py file.
-
 
 ## Screenshots
 Tu miejsce na screeny.
 
+### UI
+Basic UI with buttons, toggle buttons, as well as a slider to change volume level. Self-explanatory, I guess.
+#### MacOS
+<img width="912" alt="playing" src="https://user-images.githubusercontent.com/32602120/83876941-f5617200-a739-11ea-82c5-a7949edd4846.png">
+
+#### Windows
+<img width="784" alt="windows" src="https://user-images.githubusercontent.com/32602120/83877168-57ba7280-a73a-11ea-8594-2d55764ca2a8.png">
+
+### Dark mode
+<img width="912" alt="dark_mode" src="https://user-images.githubusercontent.com/32602120/83876943-f6929f00-a739-11ea-8862-063fd1f9c0ef.png">
+
+### About popup
+Added info about collaborators as well as link to icons - [Icons8](https://icons8.com).
+<img width="532" alt="about" src="https://user-images.githubusercontent.com/32602120/83876937-f2ff1800-a739-11ea-8f8e-ec4734146098.png">
 
 ## Contact us
 
