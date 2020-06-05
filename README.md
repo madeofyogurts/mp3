@@ -28,7 +28,7 @@ Basic UI with buttons, toggle buttons, as well as a slider to change volume leve
 <img width="912" alt="Zrzut ekranu 2020-06-5 o 17 29 19" src="https://user-images.githubusercontent.com/64961210/83894864-28176480-a752-11ea-8348-48eda24d55ab.png">
 
 #### Windows
-<img width="912" alt="Zrzut ekranu 2020-06-5 o 17 29 19" src="https://user-images.githubusercontent.com/64961210/83894864-28176480-a752-11ea-8348-48eda24d55ab.png">
+![windows](https://user-images.githubusercontent.com/64961210/83898048-aaa22300-a756-11ea-9c26-31688dd16efa.png)
 
 ### Dark mode
 <img width="912" alt="Zrzut ekranu 2020-06-5 o 17 22 06" src="https://user-images.githubusercontent.com/64961210/83894308-695b4480-a751-11ea-90af-62a544e7c6eb.png">
