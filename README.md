@@ -18,7 +18,7 @@ pip install mutagen
 
 ## Usage
 
-Download or clone this repo, and then run main.py file. 
+Download or clone this repo, add your .mp3 files to the same catalog and then run main.py file.
 
 
 ## Screenshots
