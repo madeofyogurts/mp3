@@ -31,7 +31,7 @@ Basic UI with buttons, toggle buttons, as well as a slider to change volume leve
 <img width="784" alt="windows" src="https://user-images.githubusercontent.com/32602120/83877168-57ba7280-a73a-11ea-8594-2d55764ca2a8.png">
 
 ### Dark mode
-<img width="912" alt="dark_mode" src="https://user-images.githubusercontent.com/32602120/83876943-f6929f00-a739-11ea-8862-063fd1f9c0ef.png">
+<img width="912" alt="Zrzut ekranu 2020-06-5 o 17 22 06" src="https://user-images.githubusercontent.com/64961210/83894308-695b4480-a751-11ea-90af-62a544e7c6eb.png">
 
 ### About popup
 Added info about collaborators as well as link to icons - [Icons8](https://icons8.com).
